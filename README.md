@@ -53,13 +53,6 @@ The checked-in `package-lock.json` makes installations reproducible. Use `npm ci
 | `src/vite-env.d.ts` | Vite client types |
 | `scripts/create-resume.py` | Optional script for regenerating the bundled PDF |
 
-## Five quick customizations
-
-1. **Change the accent.** Edit the accent variables at the top of `src/index.css`. Current violet: `#b6a0ff`. Alternatives: teal `#66dfcc` or warm amber `#f0bd6c`. Update the matching hover/soft values, the code/project illustration colors, and `public/favicon.svg` for a fully coordinated palette. Recheck text contrast if you choose darker colors.
-2. **Add real project links and dates.** Set `githubUrl`, `liveUrl`, and `period` on the Weather App object in `src/data/portfolio.ts`. Until a repository is provided, the card deliberately links to the supplied GitHub profile and labels that link correctly. No repository URL or project date has been invented.
-3. **Add screenshots and more projects.** Put a WebP or PNG in `public/images/`, then set `image: { src: 'images/weather-app.webp', alt: 'A specific description of the screenshot' }`. Add two or three more `Project` objects to the array; omit `featured` for half-width cards. The grid adapts without empty cards. Update the short Projects introduction if you add multiple projects.
-4. **Swap the résumé.** Replace `public/resume.pdf`; the navigation download will keep working. To use another filename, change `profile.resumePath` in `src/data/portfolio.ts`. The optional generator uses `python -m pip install reportlab` followed by `python scripts/create-resume.py`; Python is not needed to run the website.
-5. **Personalize your deployment.** Update `og:url` and the canonical URL in `index.html` for your final domain, plus any changed contact details in `src/data/portfolio.ts`. For a GitHub Pages project subdirectory, create `.env.local` from `.env.example`, set `VITE_BASE_PATH=/repository-name/`, and rebuild. Navigation uses same-page anchors; PDF, favicon, and project image paths respect the base path. If you add a social-preview image later, add its absolute `og:image` and `twitter:image` URLs in `index.html`.
 
 ## Content and accessibility details
 
@@ -71,10 +64,3 @@ Motion honors `prefers-reduced-motion` and content is visible if observation is 
 
 Social metadata is provided without a fabricated preview image. The contact details are intentionally visible because they were provided for this portfolio. No analytics or trackers are included.
 
-## Credits and references
-
-Layout inspiration: [dtandon.com](https://dtandon.com) and [abdullah-masood.com](https://www.abdullah-masood.com/). All résumé content comes from Ali's supplied information.
-
-Implementation references: [Vite guide](https://vite.dev/guide/) and [Tailwind's Vite integration](https://tailwindcss.com/docs/installation/using-vite). Tailwind v4 uses the Vite plugin; a PostCSS config is not necessary for this setup.
-
-Manrope and JetBrains Mono are self-hosted through Fontsource under the SIL Open Font License. Interface icons use Lucide; brand icons use React Icons. The installed packages include their original license notices. Brand marks remain the property of their respective owners.
