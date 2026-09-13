@@ -87,7 +87,7 @@ export default function About() {
             <div>
               <span>GPA</span>
               <strong>
-                3.5
+                3.65
                 <span className="text-base font-normal text-muted"> / 4.0</span>
               </strong>
             </div>
